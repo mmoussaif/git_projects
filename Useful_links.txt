@@ -1,0 +1,2 @@
+## VS code Terminal themes
+https://glitchbone.github.io/vscode-base16-term/#/3024
