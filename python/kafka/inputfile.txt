@@ -1,0 +1,28 @@
+#Start Zookeeper 
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+#Start Kafka server
+bin/kafka-server-start.sh config/server.properties
+
+#Create topic
+bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic MyTopic
+
+#List topics
+bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+#Producer CL
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic MyTopic
+
+#Consumer CL
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic MyTopic --from-beginning
+
+Link
+https://sparkbyexamples.com/kafka/kafka-delete-topic/
+
+bin/kafka-topics.sh --zookeeper localhost:2181 --topic JSONtopic --delete
+
+
+https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/
+
+ source env/bin/activate
+deactivate
